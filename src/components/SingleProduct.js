@@ -1,5 +1,6 @@
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import Rating from "./Rating";
+import { faker } from '@faker-js/faker';
 
 const SingleProduct = ({ prod }) => {
   return (
@@ -13,10 +14,16 @@ const SingleProduct = ({ prod }) => {
             {prod.fastDelivery ? (
               <div>Fast Delivery</div>
             ) : (
-              <div>4 days delivery</div>
+              <div>{faker.datatype.number(10)} days delivery</div>
             )}
             <Rating rating={ prod.ratings } />
           </Card.Subtitle>
+          <Button variant='danger'>
+              Remove from cart
+          </Button>
+          <Button disabled={!prod.inStock}>
+              {!prod.inStock ? "Out of Stock" : "Add to cart"}
+          </Button>
         </Card.Body>
       </Card>
     </div>
