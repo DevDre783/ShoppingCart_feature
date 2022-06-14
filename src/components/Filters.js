@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap"
+import { Button, Form } from "react-bootstrap";
 
 const Filters = () => {
   return (
