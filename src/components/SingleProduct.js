@@ -1,8 +1,16 @@
 import { Card, Button } from "react-bootstrap";
 import Rating from "./Rating";
 import { faker } from '@faker-js/faker';
+import { CartState } from "../context/Context";
 
 const SingleProduct = ({ prod }) => {
+  const {
+    state: {cart},
+    dispatch,
+  } = CartState();
+
+  // console.log(cart);
+
   return (
     <div className="products">
       <Card>
@@ -14,16 +22,33 @@ const SingleProduct = ({ prod }) => {
             {prod.fastDelivery ? (
               <div>Fast Delivery</div>
             ) : (
-              <div>{faker.datatype.number(10)} days delivery</div>
+              <div>4 days delivery</div>
             )}
             <Rating rating={ prod.ratings } />
           </Card.Subtitle>
-          <Button variant='danger'>
-              Remove from cart
-          </Button>
-          <Button disabled={!prod.inStock}>
-              {!prod.inStock ? "Out of Stock" : "Add to cart"}
-          </Button>
+          {
+            cart.some(cartProd => cartProd.id === prod.id) ?
+            (
+              <Button onClick={() => dispatch({
+                type: "REMOVE_FROM_CART",
+                payload: prod,
+              })}
+              variant='danger'>
+                Remove from cart
+              </Button>
+            )
+            :
+            (
+              <Button onClick={() => dispatch({
+                  type: "ADD_TO_CART",
+                  payload: prod,
+                })}
+                disabled={!prod.inStock}
+              >
+                {!prod.inStock ? "Out of Stock" : "Add to cart"}
+              </Button>
+            )
+          }
         </Card.Body>
       </Card>
     </div>
