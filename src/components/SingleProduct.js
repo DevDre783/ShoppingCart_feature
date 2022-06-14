@@ -2,6 +2,7 @@ import { Card, Button } from "react-bootstrap";
 import Rating from "./Rating";
 import { faker } from '@faker-js/faker';
 import { CartState } from "../context/Context";
+import "./styles.css";
 
 const SingleProduct = ({ prod }) => {
   const {
