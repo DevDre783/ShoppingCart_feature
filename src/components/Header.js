@@ -4,7 +4,8 @@ import {
     Container,
     FormControl,
     Dropdown,
-    Nav
+    Nav,
+    Button
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa"
@@ -63,6 +64,11 @@ const Header = () => {
                                         />
                                     </span>
                                    ))}
+                                    <Link to="/cart">
+                                        <Button style={{ width: "95%", margin: "0 10px" }}>
+                                            Go To Cart
+                                        </Button>
+                                    </Link>
                                 </>
                             )
                             :
@@ -70,7 +76,6 @@ const Header = () => {
                                 <span style={{ padding: 10 }}>Cart is Empty!</span>
                             )
                         }
-
                     </Dropdown.Menu>
                 </Dropdown>
             </Nav>
