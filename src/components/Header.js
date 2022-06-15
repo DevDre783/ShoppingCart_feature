@@ -32,7 +32,7 @@ const Header = () => {
                 />
             </Navbar.Text>
             <Nav>
-                <Dropdown style={{alignRight: true}}>
+                <Dropdown style={{ alignRight: true,  zIndex: "1" }}>
                     <Dropdown.Toggle variant='success'>
                         <FaShoppingCart color="white" fontSize="25px" />
                         <Badge bg='none'>{cart.length}</Badge>
