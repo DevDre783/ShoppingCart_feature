@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CartState } from '../context/Context';
-import { ListGroup, Button, Row, Col, Form, Image } from 'react-bootstrap';
+import { ListGroup, Button, Row, Col, Form, Image, Alert } from 'react-bootstrap';
 import Rating from './Rating';
 import { AiFillDelete } from 'react-icons/ai';
 
@@ -84,7 +84,11 @@ const Cart = () => {
           <span style={{ fontWeight: 700, fontSize: 20 }}>
             Total: $ {total}
           </span>
-          <Button type="button" disabled={cart.length === 0}>
+          <Button
+            type="button"
+            disabled={cart.length === 0}
+            onClick={() => alert("Thank You For Your Purchase! An order confirmation will be sent to your email.")}
+          >
             Proceed to Checkout
           </Button>
       </div>

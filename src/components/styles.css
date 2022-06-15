@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 .home {
     display: flex;
 }
@@ -90,5 +94,9 @@
 
     .products {
         width: 100%;
+    }
+
+    .cart_dropdown {
+        right: 220%;
     }
 }
