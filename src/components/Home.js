@@ -5,9 +5,13 @@ import SingleProduct from './SingleProduct';
 import "./styles.css";
 
 const Home = () => {
-    const test = "Testing";
-    const { state: { products },} = CartState();
-    // console.log(products);
+    const {
+        state: { products },
+    } = CartState();
+
+    const transformProducts = () => {
+        let sortedProducts = products
+    }
 
     return (
         <div className='home'>
