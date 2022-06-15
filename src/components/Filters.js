@@ -6,11 +6,11 @@ const Filters = () => {
     // const [rate, setRate] = useState(2);
 
     const {
-        productState: { sort, byStock, byFastDelivery, byRating },
+        productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
         productDispatch,
       } = CartState();
 
-    //   console.log(sort, byStock, byFastDelivery, byRating, searchQuery);
+      console.log(sort, byStock, byFastDelivery, byRating, searchQuery);
 
   return (
     <div className="filters">
