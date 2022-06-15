@@ -60,3 +60,35 @@
 .summary {
     width: 30%;
 }
+
+
+/* QUERIES */
+
+@media (max-width: 771px) {
+    .filters {
+        width: 40%;
+        padding: 20px;
+        margin: 5px;
+    }
+
+    .filters > span {
+        font-size: 15px;
+    }
+
+    .title {
+        font-size: 20px !important;
+    }
+
+    .productContainer {
+        width: 58%;
+        padding: 0;
+    }
+
+    .search {
+        display: none !important;
+    }
+
+    .products {
+        width: 100%;
+    }
+}

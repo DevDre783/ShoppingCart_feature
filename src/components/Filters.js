@@ -6,11 +6,11 @@ const Filters = () => {
     // const [rate, setRate] = useState(2);
 
     const {
-        productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
+        productState: { sort, byStock, byFastDelivery, byRating },
         productDispatch,
       } = CartState();
 
-      console.log(sort, byStock, byFastDelivery, byRating, searchQuery);
+      console.log(sort, byStock, byFastDelivery, byRating);
 
   return (
     <div className="filters">
@@ -57,7 +57,6 @@ const Filters = () => {
                 onChange={() =>
                     productDispatch({
                         type: "FILTER_BY_STOCK",
-
                     })
                 }
                 checked={byStock}

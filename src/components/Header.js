@@ -20,7 +20,7 @@ const Header = () => {
       } = CartState();
 
   return (
-    <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
+    <Navbar className="navbar_full" bg="dark" variant="dark" style={{ height: 80 }}>
         <Container>
             <Navbar.Brand>
                 <Link to="/">Shopping Cart</Link>
@@ -39,7 +39,7 @@ const Header = () => {
                 />
             </Navbar.Text>
             <Nav>
-                <Dropdown style={{ alignRight: true,  zIndex: "1" }}>
+                <Dropdown>
                     <Dropdown.Toggle variant='success'>
                         <FaShoppingCart color="white" fontSize="25px" />
                         <Badge bg='none'>{cart.length}</Badge>
